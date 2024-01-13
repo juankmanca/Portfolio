@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import Experince from "../components/Experince.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+---
+
+<Layout title="Portfolio de JuanK - Desarrollador y Programador Web">
+	<main>
+		<SectionContainer class="py-44 pb-24">
+			<h1 class="text-withe text-5xl font-bold flex flex-row gap-x-4 pb-4">
+				Hey! Soy Juan
+				<div class="flex justify-center items-center">
+					<a
+						href="https://www.linkedin.com/in/juan-camilo-ocampo-gomez-309318180/"
+					></a>
+					<Badge>Open to work</Badge>
+				</div>
+			</h1>
+			<h2 class="text-2xl text-wrap">
+				Fullstack Developer with 2 years of experience, working with frameworks
+				like .net and Angular.
+			</h2>
+
+			<nav class="flex gap-x-2 mt-6">
+				<SocialPill href="https://github.com/juankmanca">
+					<GitHub class="size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill
+					href="https://www.linkedin.com/in/juan-camilo-ocampo-gomez-309318180/"
+				>
+					<LinkedIn class="size-6" />
+					LinkedIn
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer>
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7" />
+				Experiancia Laboral
+			</h2>
+			<Experince />
+		</SectionContainer>
+	</main>
+</Layout>
