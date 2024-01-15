@@ -1,0 +1,48 @@
+---
+import dotNetIcon from "../icons/dot-net-core.astro";
+
+const TAGS = {
+  DOTNET: {
+    name: ".Net Core",
+    class: "",
+    icon: dotNetIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Astro Main Page",
+    description: "Non-profit project for all comunity and any participant",
+    link: "https://astro.build/",
+    github: "https://github.com/withastro/astro",
+    image: "/projects/astro.jpg",
+    tags: [TAGS.DOTNET],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gapt-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt="Imagen Del Proyecto"
+      />
+    </article>
+  ))
+}
